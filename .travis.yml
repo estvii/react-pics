@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t estvii/react-pics -f Dockerfile.dev .
+
+script: 
+  - docker run estvii/react-pics npm run test -- --coverage
+
+  
