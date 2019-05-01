@@ -11,7 +11,7 @@ script:
 deploy:
   provider: s3
   region: us-east-1
-  bucket: "S3 Bucket"
+  bucket: "react-pics"
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   on:
