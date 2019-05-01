@@ -8,16 +8,25 @@ before_install:
 script: 
   # - docker run estvii/react-pics npm run test -- --coverage
 
-before_deploy:
-  pip install --user awscli
-  script: 
-    npm run build
+# before_deploy:
+#   pip install --user awscli
+
+# deploy:
+#   on:
+#     branch: master
+#   provider: script
+#   script: ~/.local/bin/aws s3 sync build s3://react-pics
+#   skip_cleanup: true
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY  
 
 deploy:
   on:
     branch: master
-  provider: script
-  script: ~/.local/bin/aws s3 sync build s3://react-pics
-  skip_cleanup: true
+  provider: s3
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY  
+  bucket: "react-pics"
+  skip_cleanup: true
+  region: "us-east-1"
+  local_dir: build
