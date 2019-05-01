@@ -10,6 +10,7 @@ script:
 
 before_deploy:
   pip install --user awscli
+  npm run build
 
 deploy:
   on:
