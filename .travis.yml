@@ -13,7 +13,7 @@ deploy:
     branch: master
   provider: s3
   region: us-east-1
-  bucket: "react-pics"
+  bucket: "react-picss"
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   skip_cleanup: true
