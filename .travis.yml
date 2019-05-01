@@ -6,7 +6,7 @@ before_install:
   - docker build -t estvii/react-pics -f Dockerfile.dev .
 
 script: 
-  - docker run estvii/react-pics npm run test -- --coverage && npm run build
+  - docker run estvii/react-pics npm run test -- --coverage && npm install && npm run build
 
 before_deploy:
   pip install --user awscli
