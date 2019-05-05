@@ -3,12 +3,12 @@ services:
   - docker
 
 before_install:
-  # - docker build -t estvii/react-pics -f Dockerfile.dev .
-  - docker build -t estvii/react-pics .
+  - docker build -t estvii/react-pics -f Dockerfile.dev .
+  # - docker build -t estvii/react-pics .
 
 script: 
-  # - docker run estvii/react-pics npm run test -- --coverage && npm install && npm run build
-  - docker run estvii/react-pics
+  - docker run estvii/react-pics npm run test -- --coverage && npm install && npm run build
+  # - docker run estvii/react-pics
 # after_success:
   
 
