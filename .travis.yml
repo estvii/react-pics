@@ -3,22 +3,14 @@ services:
   - docker
 
 before_install:
-  - docker build -t estvii/react-pics -f Dockerfile.dev .
+  # - docker build -t estvii/react-pics -f Dockerfile.dev .
+  - docker build -t estvii/react-pics .
 
 script: 
-  - docker run estvii/react-pics npm run test -- --coverage && npm install && npm run build
-
-# before_deploy:
-#   pip install --user awscli
-
-# deploy:
-#   on:
-#     branch: master
-#   provider: script
-#   script: ~/.local/bin/aws s3 sync build s3://react-pics --region=us-east-1 --delete
-#   skip_cleanup: true
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY  
+  # - docker run estvii/react-pics npm run test -- --coverage && npm install && npm run build
+  - docker run estvii/react-pics
+# after_success:
+  
 
 deploy:
   on:
